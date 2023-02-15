@@ -28,9 +28,8 @@ laplacian::rst laplacian::labelprop(seed& s, int hop, double a) {
 	spmcrs f_p; // pattern
 	f_0 *= (1.-a);
 	for (int i = 0; i < hop; ++i) {
-		f_t *= a;
 		f_p = _w_t*(_diag_a*f_t);
-		f_t = (_diag_a*(_w*f_p))-f_t+f_0;
+		f_t = ((_diag_a*(_w*f_p))-f_t)*a+f_0;
 	}
 	return make_pair(_make_instance(f_t),_make_instance(f_p));
 }
