@@ -4,6 +4,10 @@
 using namespace spm;
 using namespace std;
 
+void laplacian::set_thread_num(int t) {
+	spmcrs::set_thread_num(t);
+}
+
 laplacian::laplacian() {
 }
 

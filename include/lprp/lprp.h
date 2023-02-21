@@ -16,6 +16,7 @@ namespace spm {
 			laplacian();
 			laplacian(const char *tsv, option = option::freq, double threshold = 0.);
 			~laplacian();
+			static void set_thread_num(int t);
 			virtual rst labelprop(seed& s, int hop, double a = 0.01);
 		protected:
 		private:
